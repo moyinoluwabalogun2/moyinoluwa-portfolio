@@ -46,6 +46,7 @@ function Experience() {
           <div className="section-header__row">
             <div>
               <h2>Internship experience and practical growth.</h2>
+
               <p>
                 A focused section for my structured internship background,
                 certificate-backed learning, and development process.
@@ -57,7 +58,11 @@ function Experience() {
         <div className="experience__grid">
           <div className="experience__timeline">
             {experience.map((item) => (
-              <article className="experience-card" key={`${item.company}-${item.title}`} data-reveal>
+              <article
+                className="experience-card"
+                key={`${item.company}-${item.title}`}
+                data-reveal
+              >
                 <div className="experience-card__marker">
                   <Award size={20} />
                 </div>
@@ -69,17 +74,22 @@ function Experience() {
                       <h3>{item.title}</h3>
                     </div>
 
-                    {item.certificate && item.certificate !== '#' && (
-  <a
-    href={item.certificate}
-    target="_blank"
-    rel="noreferrer"
-    className="experience-card__certificate"
-  >
-    Certificate
-    <Sparkles size={16} />
-  </a>
-)}
+                    {item.certificates?.length > 0 && (
+                      <div className="experience-card__certificates">
+                        {item.certificates.map((certificate) => (
+                          <a
+                            key={certificate.href}
+                            href={certificate.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="experience-card__certificate"
+                          >
+                            {certificate.label}
+                            <Sparkles size={16} />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="experience-card__meta">
@@ -122,9 +132,11 @@ function Experience() {
               </div>
 
               <h3>How I approach builds</h3>
+
               <p>
-                I don’t just throw sections on a page. I think through the product,
-                the user flow, the UI structure, and how the final experience should feel.
+                I don’t just throw sections on a page. I think through the
+                product, the user flow, the UI structure, and how the final
+                experience should feel.
               </p>
             </div>
 

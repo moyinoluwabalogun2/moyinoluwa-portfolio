@@ -1,5 +1,17 @@
 import React from 'react'
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react'
+import {
+  ArrowUp,
+  Github,
+  Linkedin,
+  Mail,
+} from 'lucide-react'
+
+const githubUrl = 'https://github.com/moyinoluwabalogun2'
+
+const linkedinUrl =
+  'https://linkedin.com/in/balogun-moyinoluwa-595973355'
+
+const emailUrl = 'mailto:moyinoluwabalogun2@gmail.com'
 
 function Footer() {
   const currentYear = new Date().getFullYear()
@@ -14,8 +26,9 @@ function Footer() {
           </a>
 
           <p>
-            Full-Stack Developer building modern web applications, dashboards,
-            admin portals, and polished digital products.
+            Full-Stack Developer building modern web
+            applications, dashboards, admin portals, and
+            polished digital products.
           </p>
         </div>
 
@@ -28,15 +41,28 @@ function Footer() {
         </div>
 
         <div className="footer__socials">
-          <a href="https://github.com/moyinoluwabalogun2" aria-label="GitHub profile">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile"
+          >
             <Github size={18} />
           </a>
 
-          <a href="https://linkedin.com/in/balogun-moyinoluwa-595973355" aria-label="LinkedIn profile">
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn profile"
+          >
             <Linkedin size={18} />
           </a>
 
-          <a href="moyinoluwabalogun2@gmail.com" aria-label="Email Balogun">
+          <a
+            href={emailUrl}
+            aria-label="Email Balogun"
+          >
             <Mail size={18} />
           </a>
 
@@ -47,8 +73,12 @@ function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <span>© {currentYear} Balogun Moyinoluwa Umar. All rights reserved.</span>
-        <span>Built by moyin.</span>
+        <span>
+          © {currentYear} Balogun Moyinoluwa Umar. All rights
+          reserved.
+        </span>
+
+        <span>Built by Moyin.</span>
       </div>
     </footer>
   )

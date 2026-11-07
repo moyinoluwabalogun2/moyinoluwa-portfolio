@@ -10,7 +10,7 @@ export const experience = [
       'Completed structured HNG Internship learning and assessment activities',
       'Gained practical exposure to software development and data analysis workflows',
       'Improved problem-solving, communication, technical discipline, and task delivery',
-      'Earned an official HNG Internship certificate of participation',
+      'Earned official HNG Internship certificates of participation',
     ],
     skills: [
       'Software Development',
@@ -20,13 +20,21 @@ export const experience = [
       'GitHub',
       'Communication',
     ],
-    certificate: '/public/certificates/hng-internship-13.pdf',
-    certificate: '/public/certificates/hng-internship-133.pdf',
+    certificates: [
+      {
+        label: 'Frontend Certificate',
+        href: '/certificates/hng-internship-13.pdf',
+      },
+      {
+        label: 'Data Certificate',
+        href: '/certificates/hng-internship-133.pdf',
+      },
+    ],
   },
   {
     title: 'Industrial Training',
     company: 'Jimzan Concepts',
-    period: '2025 - 2026',
+    period: '2025 – 2026',
     location: 'Sango, Ogun State',
     description:
       'Gained practical development experience by building web applications and interactive features while learning real-world development practices.',
@@ -35,13 +43,20 @@ export const experience = [
       'Gained hands-on experience with HTML, CSS, JavaScript, React, and Firebase',
       'Improved UI/UX thinking, debugging, and practical problem-solving skills',
     ],
-    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Firebase', 'Debugging'],
-    certificate: '#',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Firebase',
+      'Debugging',
+    ],
+    certificates: [],
   },
   {
     title: 'Freelance / Personal Projects',
     company: 'Self-Initiated',
-    period: '2022 - Present',
+    period: '2022 – Present',
     location: 'Remote',
     description:
       'Designed and developed multiple personal and freelance-style web projects, including business websites, portfolio projects, ecommerce concepts, dashboards, and full-stack application ideas.',
@@ -50,7 +65,13 @@ export const experience = [
       'Implemented responsive designs, authentication systems, API integrations, and dynamic frontend features',
       'Focused on delivering clean, functional, and visually appealing web applications',
     ],
-    skills: ['React', 'JavaScript', 'Firebase', 'API Integration', 'Responsive Design'],
-    certificate: '#',
+    skills: [
+      'React',
+      'JavaScript',
+      'Firebase',
+      'API Integration',
+      'Responsive Design',
+    ],
+    certificates: [],
   },
 ]

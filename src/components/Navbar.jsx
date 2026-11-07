@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Menu, X, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react'
+import {
+  Menu,
+  X,
+  Github,
+  Linkedin,
+  Mail,
+  ArrowUpRight,
+} from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -9,6 +16,11 @@ const navLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ]
+
+const githubUrl = 'https://github.com/moyinoluwabalogun2'
+const linkedinUrl =
+  'https://linkedin.com/in/balogun-moyinoluwa-595973355'
+const emailUrl = 'mailto:moyinoluwabalogun2@gmail.com'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,12 +40,21 @@ function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
+    <header
+      className={`site-header ${
+        scrolled ? 'site-header--scrolled' : ''
+      }`}
+    >
       <nav className="nav container">
-        <a href="#home" className="brand" onClick={closeMenu} aria-label="Go to homepage">
+        <a
+          href="#home"
+          className="brand"
+          onClick={closeMenu}
+          aria-label="Go to homepage"
+        >
           <img
             src="/images/mb-logo.png"
-            alt="MB logo"
+            alt="BMU logo"
             className="brand-logo-image"
           />
 
@@ -52,15 +73,27 @@ function Navbar() {
         </div>
 
         <div className="nav__actions">
-          <a href="https://github.com/moyinoluwabalogun2" className="icon-link" aria-label="GitHub profile">
+          <a
+            href={githubUrl}
+            className="icon-link"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile"
+          >
             <Github size={18} />
           </a>
 
-          <a href="https://linkedin.com/in/balogun-moyinoluwa-595973355" className="icon-link" aria-label="LinkedIn profile">
+          <a
+            href={linkedinUrl}
+            className="icon-link"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn profile"
+          >
             <Linkedin size={18} />
           </a>
 
-          <a href="moyinoluwabalogun2@gmail.com" className="nav__cta">
+          <a href={emailUrl} className="nav__cta">
             Let’s Talk
             <ArrowUpRight size={16} />
           </a>
@@ -69,7 +102,9 @@ function Navbar() {
         <button
           type="button"
           className="nav__toggle"
-          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-label={
+            isOpen ? 'Close navigation menu' : 'Open navigation menu'
+          }
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
         >
@@ -77,26 +112,44 @@ function Navbar() {
         </button>
       </nav>
 
-      <div className={`mobile-menu ${isOpen ? 'mobile-menu--open' : ''}`}>
+      <div
+        className={`mobile-menu ${
+          isOpen ? 'mobile-menu--open' : ''
+        }`}
+      >
         <div className="mobile-menu__inner container">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} onClick={closeMenu}>
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={closeMenu}
+            >
               {link.label}
             </a>
           ))}
 
           <div className="mobile-menu__socials">
-            <a href="#" aria-label="GitHub profile">
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+            >
               <Github size={18} />
               GitHub
             </a>
 
-            <a href="#" aria-label="LinkedIn profile">
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+            >
               <Linkedin size={18} />
               LinkedIn
             </a>
 
-            <a href="mailto:your-email@example.com" aria-label="Email Balogun">
+            <a href={emailUrl} aria-label="Email Balogun">
               <Mail size={18} />
               Email
             </a>

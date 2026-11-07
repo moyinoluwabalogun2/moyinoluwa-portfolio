@@ -2356,3 +2356,16 @@ strong {
     max-height: 44px !important;
   }
 }
+/* Multiple certificate buttons */
+.experience-card__certificates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .experience-card__certificates {
+    justify-content: flex-start;
+  }
+}

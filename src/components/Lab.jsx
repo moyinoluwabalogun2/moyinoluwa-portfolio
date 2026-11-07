@@ -54,8 +54,8 @@ function Lab() {
               and technical practice that show continuous improvement.
             </p>
 
-            <a href="#" className="btn btn--secondary">
-              View Lab Archive
+            <a href="#projects" className="btn btn--secondary">
+              Explore Selected Work
               <WandSparkles size={18} />
             </a>
           </div>

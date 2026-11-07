@@ -19,9 +19,11 @@ function Projects() {
           <div className="section-header__row">
             <div>
               <h2>Projects built with product thinking.</h2>
+
               <p>
-                A curated collection of full-stack applications, dashboards, SaaS concepts,
-                admin portals, simulation tools, and responsive business websites.
+                A curated collection of full-stack applications, dashboards,
+                SaaS concepts, admin portals, simulation tools, and responsive
+                business websites.
               </p>
             </div>
 
@@ -34,7 +36,11 @@ function Projects() {
 
         <div className="featured-projects">
           {featuredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} featured={index === 0} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              featured={index === 0}
+            />
           ))}
         </div>
 
@@ -46,32 +52,61 @@ function Projects() {
             </span>
 
             <h3>Additional websites and MVP concepts</h3>
+
             <p>
-              These projects show range across business websites, MVP interfaces,
-              service platforms, and responsive frontend builds.
+              These projects show range across business websites, MVP
+              interfaces, service platforms, and responsive frontend builds.
             </p>
           </div>
 
           <div className="more-work__grid">
-            {otherProjects.map(({ id, title, category, description, techStack, Icon, liveDemo }) => (
-              <a href={liveDemo} className="mini-project-card" key={id}>
-                <div className="mini-project-card__icon">
-                  <Icon size={20} />
-                </div>
+            {otherProjects.map(
+              ({
+                id,
+                title,
+                category,
+                description,
+                techStack,
+                Icon,
+                liveDemo,
+              }) => {
+                const content = (
+                  <>
+                    <div className="mini-project-card__icon">
+                      <Icon size={20} />
+                    </div>
 
-                <div>
-                  <span>{category}</span>
-                  <h4>{title}</h4>
-                  <p>{description}</p>
+                    <div>
+                      <span>{category}</span>
+                      <h4>{title}</h4>
+                      <p>{description}</p>
 
-                  <div className="mini-project-card__stack">
-                    {techStack.slice(0, 4).map((tech) => (
-                      <small key={tech}>{tech}</small>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            ))}
+                      <div className="mini-project-card__stack">
+                        {techStack.slice(0, 4).map((tech) => (
+                          <small key={tech}>{tech}</small>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )
+
+                return liveDemo && liveDemo !== '#' ? (
+                  <a
+                    href={liveDemo}
+                    className="mini-project-card"
+                    key={id}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <article className="mini-project-card" key={id}>
+                    {content}
+                  </article>
+                )
+              },
+            )}
           </div>
         </div>
       </div>

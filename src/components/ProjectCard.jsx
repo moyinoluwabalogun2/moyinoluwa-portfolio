@@ -67,20 +67,41 @@ function ProjectCard({ project, featured = false }) {
         </div>
 
         <div className="project-card__links">
-          <a href={liveDemo} aria-label={`View live demo for ${title}`}>
-            <ExternalLink size={16} />
-            Live
-          </a>
+          {liveDemo && liveDemo !== '#' && (
+            <a
+              href={liveDemo}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`View live demo for ${title}`}
+            >
+              <ExternalLink size={16} />
+              Live
+            </a>
+          )}
 
-          <a href={github} aria-label={`View GitHub repository for ${title}`}>
-            <Github size={16} />
-            GitHub
-          </a>
+          {github && github !== '#' && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`View GitHub repository for ${title}`}
+            >
+              <Github size={16} />
+              GitHub
+            </a>
+          )}
 
-          <a href={caseStudy} aria-label={`Read case study for ${title}`}>
-            <FileText size={16} />
-            Case Study
-          </a>
+          {caseStudy && caseStudy !== '#' && (
+            <a
+              href={caseStudy}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Read case study for ${title}`}
+            >
+              <FileText size={16} />
+              Case Study
+            </a>
+          )}
         </div>
       </div>
     </article>
